@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<!-- Find Post Number -->
+{% assign post_number = nil %}
+{% for post in site.posts %}
+  {% if post.url == page.url %}
+    {% assign post_number = forloop.index %}
+  {% endif %}
+{% endfor %}
+
+<!-- Post Content -->
+<div class="post-header">
+  <h1>
+    {% if post_number %}
+      <span class="post-number">{{ post_number }}</span>
+    {% endif %}
+    {{ page.title }}
+  </h1>
+  <div style="display: inline-block; text-align: right;">
+    <a href="#" class="justify-toggle" onclick="toggleJustification(event)">[unjustify]</a>
+    <a href="/" class="back-link" style="margin-left: 10px;">[back]</a>
+  </div>
+</div>
+
+<script>
+  let isJustified = true;
+
+  function toggleJustification(event) {
+    event.preventDefault(); // Prevent link navigation
+    const postContents = document.querySelectorAll('.post-content p');
+
+    if (isJustified) {
+      postContents.forEach(p => p.style.textAlign = 'left');
+      document.querySelector('.justify-toggle').innerText = '[justify]';
+    } else {
+      postContents.forEach(p => p.style.textAlign = 'justify');
+      document.querySelector('.justify-toggle').innerText = '[unjustify]';
+    }
+
+    isJustified = !isJustified;
+  }
+</script>
+
+<p>
+  {{ page.date | date: "%-d %B %Y" }}
+  {% assign post_time = page.date | date: "%H:%M" %}
+  {% if post_time != "00:00" %}
+    — {{ page.date | date: "%I:%M" }}{{ page.date | date: "%p" | downcase }}
+  {% endif %}
+</p>
+<br>
+
+<div class="post-content">
+    {% assign processed_content = content | replace: 'xX', post_number %}
+    {{ processed_content }}
+</div>

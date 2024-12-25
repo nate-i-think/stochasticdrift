@@ -1,0 +1,44 @@
+---
+layout: default
+title: Stochastic Drift
+---
+
+<!-- Title Section -->
+<div class="title-section">
+  <h1>Stochastic Drift</h1>
+  <h2>Notes from the Edge of Order</h2>
+  <div class="author">Nathan Myers</div>
+  <div class="date">{{ site.time | date: "%B %Y" }}</div>
+</div>
+
+<!-- Posts Section -->
+<div class="posts">
+    {% assign excerpt_length = 50 %}
+    {% assign truncation_length = 45 %}
+    {% assign chapter_number = 1 %} <!-- Define the chapter number -->
+
+    {% for post in site.posts %}
+      <div class="post">
+        <!-- Post Number and Title as Hyperlinks -->
+        <h2>
+          <a href="{{ post.url }}">
+            <span class="post-number">{{ forloop.index }}</span>
+            <span class="post-title">{{ post.title }}</span>
+          </a>
+        </h2>
+        
+        <!-- Post Content with Truncation and xX Replacement -->
+        <p class="post-excerpt">
+          {% assign processed_content = post.content | replace: 'xX', forloop.index %}
+          {% assign word_count = processed_content | number_of_words %}
+          {% if word_count > excerpt_length %}
+            {{ processed_content | truncatewords: truncation_length }} 
+            <br>
+            <a href="{{ post.url }}">more...</a>
+          {% else %}
+            {{ processed_content | truncatewords: excerpt_length }}
+          {% endif %}
+        </p>
+      </div>
+    {% endfor %}
+</div>

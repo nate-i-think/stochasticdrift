@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is "Stochastic Drift"?</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Find Post Number -->
+
+
+
+<!-- Post Content -->
+<div class="post-header">
+  <h1>
+    
+      <span class="post-number">1</span>
+    
+    What is "Stochastic Drift"?
+  </h1>
+  <div style="display: inline-block; text-align: right;">
+    <a href="#" class="justify-toggle" onclick="toggleJustification(event)">[unjustify]</a>
+    <a href="/" class="back-link" style="margin-left: 10px;">[back]</a>
+  </div>
+</div>
+
+<script>
+  let isJustified = true;
+
+  function toggleJustification(event) {
+    event.preventDefault(); // Prevent link navigation
+    const postContents = document.querySelectorAll('.post-content p');
+
+    if (isJustified) {
+      postContents.forEach(p => p.style.textAlign = 'left');
+      document.querySelector('.justify-toggle').innerText = '[justify]';
+    } else {
+      postContents.forEach(p => p.style.textAlign = 'justify');
+      document.querySelector('.justify-toggle').innerText = '[unjustify]';
+    }
+
+    isJustified = !isJustified;
+  }
+</script>
+
+<p>
+  25 December 2024
+  
+  
+    — 01:07am
+  
+</p>
+<br>
+
+<div class="post-content">
+    
+    <h3 id="xx1-introduction">1.1 Introduction.</h3>
+<p>I was inspired to make this today—well, yesterday by now—by <a href="https://knosmos.github.io/brownian/">a website</a> of my good friend, Jiereui Chang. Yes, the form—and title especially—are quite derivative. But I hope here I am able to create something unique of my own. Or at least something that justifies the silly amount of time I put into making this overly complicated LaTeX-themed Liquid template.<br />
+<br /></p>
+<h3 id="xx2-reasoning">1.2 Reasoning.</h3>
+<p><em>Stochastic Drift</em> in the context of physical systems refers to gradual and cumulative changes in a system over time due to probabilistic influences and noise. <br /><br />
+In the same way, perhaps looking back upon this repository myself or others will be able to see the ways in which my mind drifts, and even  eventually rise above the peridically shifting trajectories and observe longitudinal trends. <br />
+<br /></p>
+<h3 id="xx3-goals">1.3 Goals.</h3>
+<p>I’m not sure it’s a good idea to place a fixed goal on how often I post here. That lack of direction should, I think, be embedded in its premise: that being that this site will be an accumulation of noise that perhaps amounts to a trend.</p>
+
+</div>
+  </div>
+</body>
+<footer class="footer">
+  <p>Contents © 2024 Nathan Myers.</p>
+</footer>
+</html>
