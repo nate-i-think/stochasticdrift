@@ -7,8 +7,7 @@ I was inspired to make this today—well, yesterday by now—by [a website](http
 <br>
 ### xX.2 Reasoning.
 *Stochastic Drift* in the context of physical systems refers to gradual and cumulative changes in a system over time due to probabilistic influences and noise. 
-
-In the same way, perhaps looking back upon this repository myself or others will be able to see the ways in which my mind drifts, and even rise above the peridically shifting trajectories and observe longitudinal trends. 
+<br>In the same way, perhaps looking back upon this repository myself or others will be able to see the ways in which my mind drifts, and even rise above the peridically shifting trajectories and observe longitudinal trends. 
 <br>
 ### xX.3 Goals.
 I'm not sure it's a good idea to place a fixed goal on how often I post here. That lack of direction should, I think, be embedded in its premise: that being that this site will be a variable accumulation that perhaps eventually amounts to a trend.
