@@ -31,10 +31,10 @@ layout: default
     const postContents = document.querySelectorAll('.post-content p');
 
     if (isJustified) {
-      postContents.forEach(p => p.style.textAlign = 'left');
+      postContents.forEach(p => { p.style.textAlign = 'left'; });
       document.querySelector('.justify-toggle').innerText = '[justify]';
     } else {
-      postContents.forEach(p => p.style.textAlign = 'justify');
+      postContents.forEach(p => { p.style.textAlign = 'justify'; });
       document.querySelector('.justify-toggle').innerText = '[unjustify]';
     }
 
