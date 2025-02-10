@@ -33,12 +33,13 @@ title: Stochastic Drift
           {% assign processed_content = post.content | replace: 'xX', forloop.index %}
           {% assign word_count = processed_content | number_of_words %}
           {% if word_count > excerpt_length %}
-            {{ processed_content | truncatewords: truncation_length }} 
-            <br>
-            <a href="{{ post.url }}">more...</a>
-          {% else %}
-            {{ processed_content | truncatewords: excerpt_length }}
-          {% endif %}
+          {{ processed_content | truncatewords: truncation_length }} 
+          <br>
+          {% assign remaining_words = word_count | minus: truncation_length %}
+          <a href="{{ post.url }}">{{ remaining_words }} words more...</a>
+        {% else %}
+          {{ processed_content | truncatewords: excerpt_length }}
+        {% endif %}
         </p>
       </div>
     {% endfor %}
